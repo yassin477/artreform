@@ -136,7 +136,7 @@ Ve a tu panel de Nominalia y configura estos registros DNS:
 | A | www | IP_DE_TU_SERVIDOR | 3600 |
 
 **Ejemplo:**
-- Si tu IP es `45.67.89.123` y tu dominio es `artreform.com`:
+- Si tu IP es `45.67.89.123` y tu dominio es `art-reform.com`:
   - **Registro A**: `@` → `45.67.89.123`
   - **Registro A**: `www` → `45.67.89.123`
 

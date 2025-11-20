@@ -18,7 +18,7 @@ echo -e "${GREEN}  Instalación Automática - ArtReform${NC}"
 echo -e "${GREEN}========================================${NC}\n"
 
 # Pedir dominio
-echo -e "${YELLOW}Introduce tu dominio (ej: artreform.com):${NC}"
+echo -e "${YELLOW}Introduce tu dominio (ej: art-reform.com):${NC}"
 read DOMAIN
 
 if [ -z "$DOMAIN" ]; then
