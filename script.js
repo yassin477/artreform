@@ -232,15 +232,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
+    const SCROLL_THRESHOLD = 100; // Cantidad de scroll antes de ocultar el header
 
     if (autoScrolling) {
       // Mientras el scroll sea automático, el header permanece oculto.
       hideHeader();
     } else {
       // Comportamiento normal: si baja, ocultar; si sube, mostrar
-      if (currentScroll > lastScroll) {
+      if (currentScroll > lastScroll && currentScroll > SCROLL_THRESHOLD) {
+        // Solo ocultar si scrolleamos hacia abajo Y hemos pasado el threshold
         hideHeader();
-      } else {
+      } else if (currentScroll < lastScroll || currentScroll <= SCROLL_THRESHOLD) {
+        // Mostrar si scrolleamos hacia arriba O estamos arriba del todo
         showHeader();
       }
     }
