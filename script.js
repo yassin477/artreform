@@ -28,8 +28,10 @@ function renderGalleryPage(page) {
     galleryContainer.innerHTML = ""; // limpiamos el loader
 
     items.forEach((item, index) => {
+      const globalIndex = start + index; // Índice global en el array completo
       const div = document.createElement("div");
       div.className = "gallery-item";
+      div.setAttribute("data-index", globalIndex); // Guardar índice global
       div.innerHTML = `
         <img src="${item.src}" alt="${item.alt}" />
         <div class="gallery-overlay">
@@ -599,9 +601,10 @@ function initGalleryModal() {
   }
 
   // Open modal on gallery item click
-  galleryItems.forEach((item, index) => {
+  galleryItems.forEach((item) => {
     item.addEventListener("click", function () {
-      currentIndex = index;
+      // Obtener el índice global desde el atributo data-index
+      currentIndex = parseInt(this.getAttribute("data-index"));
       showImage(currentIndex);
       openModal();
     });
