@@ -1102,7 +1102,7 @@ function initParallax() {
   parallaxSection.innerHTML = `
         <div class="parallax-bg" style="background-image: url('images/IMG-20251120-WA0025.jpg'); position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1;"></div>
         <div class="parallax-content reveal reveal-up" style="position: relative; z-index: 2; color: #fff; text-align: center; padding: 100px 20px;">
-            <h2 style="font-size: 2.5em; margin-bottom: 20px;">Transformo espacios con profesionalidad</h2>
+            <h2 style="font-size: 2.5em; margin-bottom: 20px;">Transformamos espacios con profesionalidad</h2>
             <p style="font-size: 1.2em; margin-bottom: 30px;">Como expertos en pladur con más de 10 años de experiencia, convertimos tus ideas en realidad, creando espacios funcionales y estéticos que superan tus expectativas.</p>
             <a href="#contacto" class="btn" style="display: inline-block; padding: 15px 30px; background-color: #e74c3c; color: #fff; text-decoration: none; border-radius: 5px;">Solicita información</a>
         </div>
