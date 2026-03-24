@@ -1,0 +1,26 @@
+[
+  {
+    "src": "images/image1.jpg",
+    "alt": "Proyecto destacado 1",
+    "titulo": "Soluciones de reforma de alta calidad",
+    "descripcion": "Transformamos espacios con acabados profesionales"
+  },
+  {
+    "src": "images/image2.jpg",
+    "alt": "Proyecto destacado 2",
+    "titulo": "Experiencia y profesionalidad",
+    "descripcion": "Equipo profesional y cualificado transformando hogares y negocios"
+  },
+  {
+    "src": "images/image3.jpg",
+    "alt": "Proyecto destacado 3",
+    "titulo": "Diseños personalizados",
+    "descripcion": "Adaptamos cada proyecto a tus necesidades"
+  },
+  {
+    "src": "images/image4.jpg",
+    "alt": "Proyecto destacado 4",
+    "titulo": "Calidad garantizada",
+    "descripcion": "Trabajos certificados con acabados perfectos y materiales de primera calidad"
+  }
+]

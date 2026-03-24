@@ -36,7 +36,8 @@ function renderGalleryPage(page) {
         <img src="${item.src}" alt="${item.alt}" />
         <div class="gallery-overlay">
           <div class="gallery-info">
-            <h3>${item.titulo}</h3>
+            <i class="fas fa-search-plus" style="font-size: 3rem; margin-bottom: 10px;"></i>
+            <p style="font-size: 1.1rem; font-weight: 600;">Clic para ampliar</p>
           </div>
         </div>
       `;
@@ -358,45 +359,31 @@ function initCarousel() {
 
   if (slides.length === 0) return;
 
-  // Show slide
   function showSlide(index) {
     slides.forEach((slide) => slide.classList.remove("active"));
-
     slides[index].classList.add("active");
   }
 
-  // Go to specific slide
-  function goToSlide(index) {
-    currentSlide = index;
-    showSlide(currentSlide);
-  }
-
-  // Next slide
   function nextSlide() {
     currentSlide = (currentSlide + 1) % slides.length;
     showSlide(currentSlide);
   }
 
-  // Previous slide
   function prevSlide() {
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
     showSlide(currentSlide);
   }
 
-  // Event listeners
   if (prevBtn) prevBtn.addEventListener("click", prevSlide);
   if (nextBtn) nextBtn.addEventListener("click", nextSlide);
 
-  // Auto slide
   let slideInterval = setInterval(nextSlide, 5000);
 
-  // Pause on hover
   const carouselContainer = document.querySelector(".carousel-container");
   if (carouselContainer) {
     carouselContainer.addEventListener("mouseenter", () => {
       clearInterval(slideInterval);
     });
-
     carouselContainer.addEventListener("mouseleave", () => {
       slideInterval = setInterval(nextSlide, 5000);
     });
@@ -945,7 +932,7 @@ function initContactForm() {
       };
 
       emailjs
-        .send("service_jo60j3d", "template_5kd66ci", templateParams)
+        .send("service_qgltute", "template_3f7lj99", templateParams)
         .then(function () {
           Swal.fire({
             icon: "success",
@@ -1100,10 +1087,10 @@ function initParallax() {
   const parallaxSection = document.createElement("section");
   parallaxSection.className = "parallax-section";
   parallaxSection.innerHTML = `
-        <div class="parallax-bg" style="background-image: url('images/IMG-20251120-WA0025.jpg'); position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1;"></div>
+        <div class="parallax-bg" style="background-image: url('images/IMG-20251120-WA0052.jpg'); position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; filter: blur(3px);"></div>
         <div class="parallax-content reveal reveal-up" style="position: relative; z-index: 2; color: #fff; text-align: center; padding: 100px 20px;">
             <h2 style="font-size: 2.5em; margin-bottom: 20px;">Transformamos espacios con profesionalidad</h2>
-            <p style="font-size: 1.2em; margin-bottom: 30px;">Como expertos en pladur con más de 10 años de experiencia, convertimos tus ideas en realidad, creando espacios funcionales y estéticos que superan tus expectativas.</p>
+            <p style="font-size: 1.2em; margin-bottom: 30px;">Como equipo de expertos en pladur con experiencia, convertimos tus ideas en realidad, creando espacios funcionales y estéticos que superan tus expectativas.</p>
             <a href="#contacto" class="btn" style="display: inline-block; padding: 15px 30px; background-color: #e74c3c; color: #fff; text-decoration: none; border-radius: 5px;">Solicita información</a>
         </div>
     `;
@@ -1363,11 +1350,11 @@ function initBlueprintAnimation() {
                     </div>
                     <div class="col-md-6">
                         <h3 style='color: beige'>Planificación detallada</h3>
-                        <p style='color: beige'>Cada proyecto comienza con un diseño meticuloso y una planificación detallada. Nuestro equipo técnico analiza tus necesidades y crea soluciones personalizadas que optimizan el espacio y cumplen con tus objetivos.</p>
+                        <p style='color: beige'>Cada proyecto comienza con un diseño meticuloso y una planificación detallada. Nuestro equipo técnico analiza tus necesidades y creamos soluciones personalizadas que optimizan el espacio y cumplen con tus objetivos.</p>
                         <div class="progress-container">
                             <div class="progress-bar" data-width="90"></div>
                         </div>
-                        <p style='color: beige'>90% de nuestros clientes destacan nuestra precisión en la planificación</p>
+                        <p style='color: beige'>El 90% de nuestros clientes destacan nuestra precisión en la planificación</p>
                     </div>
                 </div>
             </div>
@@ -1437,15 +1424,25 @@ function initBeforeAfterSlider() {
                 <h2>Antes y después</h2>
                 <div class="separator"></div>
             </div>
-            <p class="text-center mb-5">Desliza para ver la transformación de nuestros proyectos</p>
-            <br>
-            <div class="before-after-container">
-                <img src="images/IMG-20251120-WA0034.jpg" alt="Después" class="after-image">
-                <img src="images/IMG-20251120-WA0032.jpg" alt="Antes" class="before-image">
-
-                <div class="slider-handle">
-                    <div class="slider-button">
-                        <i class="fas fa-arrows-alt-h"></i>
+            <div class="before-after-wrapper">
+                <div class="before-after-text">
+                    <h3>Transformación completa</h3>
+                    <p>Cada proyecto es único y requiere atención al detalle. Nuestro equipo de profesionales se encarga de transformar espacios con acabados de alta calidad.</p>
+                    <p>Utilizamos materiales premium y técnicas avanzadas para garantizar resultados duraderos que superan las expectativas de nuestros clientes.</p>
+                    <p><strong>Desliza para ver la transformación</strong> y descubre cómo convertimos espacios ordinarios en ambientes extraordinarios.</p>
+                    <ul style="margin-top: 20px; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i>Acabados profesionales</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i>Materiales de calidad</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i>Resultados garantizados</li>
+                    </ul>
+                </div>
+                <div class="before-after-container">
+                    <img src="images/IMG-20251120-WA0034.jpg" alt="Después" class="after-image">
+                    <img src="images/IMG-20251120-WA0032.jpg" alt="Antes" class="before-image">
+                    <div class="slider-handle">
+                        <div class="slider-button">
+                            <i class="fas fa-arrows-alt-h"></i>
+                        </div>
                     </div>
                 </div>
             </div>
